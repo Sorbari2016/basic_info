@@ -15,15 +15,13 @@ const server = http.createServer((req, res) => {
   if (req.url === "/") {
     filePath = path.join(__dirname, "index.html");
   } else if (req.url === "/about") {
-    filePath = path.join(__dirname, "about.html");
+    filePath = path.join("pages", "about.html");
   } else if (req.url === "/contact-me") {
-    filePath = path.join(__dirname, "contact-me.html");
+    filePath = path.join("pages", "contact-me.html");
   } else {
-    filePath = path.join(__dirname, "404.html");
+    filePath = path.join("pages", "404.html");
     res.statusCode = 400;
   }
-
-  console.log(filePath);
 
   // Read and send content
   fs.readFile(filePath, (err, content) => {
