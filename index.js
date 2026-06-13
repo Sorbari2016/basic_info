@@ -8,57 +8,35 @@ const PORT = 8080;
 
 // Create HTTP server instance
 const server = http.createServer((req, res) => {
-  if (req.method === "GET" && req.url === "/") {
-    const homepage = path.join(__dirname, "index.html");
+  // initialize file path
+  let filePath;
 
-    // Read html from disk
-    fs.readFile(homepage, (err, content) => {
-      if (err) {
-        res.writeHead(500, { "content-type": "text/plain" });
-        res.end("500 internal server error");
-        return;
-      }
-
-      // set correct header for html content
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(content); // send the file content
-    });
-  } else if (req.method === "GET" && req.url === "/about") {
-    const aboutPage = path.join(__dirname, "about.html");
-
-    fs.readFile(aboutPage, (err, content) => {
-      if (err) {
-        res.writeHead(500, { "content-type": "text/plain" });
-        res.end("500 internal server error");
-        return;
-      }
-
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(content);
-    });
-  } else if (req.method === "GET" && req.url === "/contact-me") {
-    const contactMePage = path.join(__dirname, "contact-me.html");
-
-    fs.readFile(contactMePage, (err, content) => {
-      if (err) {
-        res.writeHead(500, { "content-type": "text/plain" });
-        res.end("500 internal server error");
-        return;
-      }
-
-      res.writeHead(200, { "content-type": "text/html" });
-      res.end(content);
-    });
+  // update file path
+  if (req.url === "/") {
+    filePath = path.join(__dirname, "index.html");
+  } else if (req.url === "/about") {
+    filePath = path.join(__dirname, "about.html");
+  } else if (req.url === "/contact-me") {
+    filePath = path.join(__dirname, "contact-me.html");
   } else {
-    const errorPage = path.join(__dirname, "404.html");
-
-    // Fallback for non-existenet route
-    fs.readFile(errorPage, (err, content) => {
-      res.writeHead(400, { "content-type": "text/html" });
-      console.log(errorPage);
-      res.end(content);
-    });
+    filePath = path.join(__dirname, "404.html");
+    res.statusCode = 400;
   }
+
+  console.log(filePath);
+
+  // Read and send content
+  fs.readFile(filePath, (err, content) => {
+    // handle error
+    if (err) {
+      res.statusCode = 500;
+      res.end("Internal server erro");
+      return;
+    }
+    // respond with content
+    res.setHeader("content-type", "text/html");
+    res.end(content);
+  });
 });
 
 // Bind the server to your designated port
