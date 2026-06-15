@@ -4,8 +4,106 @@
     <title>Homepage</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <p>This is the Homepage</p>
+    <header>
+      <nav>
+        <div class="logo">
+          <h1>NaijaTunes</h1>
+        </div>
+        <ul>
+          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Feel the Rhythm of Nigeria</h2>
+        <p>
+          Discover artists, songs, genres & stories from the heartbeat of
+          African music
+        </p>
+        <a href="#artists" class="btn">Explore Artists</a>
+      </div>
+    </section>
+
+    <section id="artists" class="artists">
+      <div class="container">
+        <h3>Featured Nigerian Artists</h3>
+        <div class="artists-grid">
+          <div class="card">
+            <img src="/assets/images/burna boy.jpeg" alt="Burna Boy" />
+            <div class="card-content">
+              <span class="genre">Afrobeats</span>
+              <h4>Burna Boy</h4>
+              <p>
+                The African Giant. Grammy-winning global superstar from Port
+                Harcourt.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="/assets/images/wizkid.jpeg" alt="Wizkid" />
+            <div class="card-content">
+              <span class="genre">Afrobeats</span>
+              <h4>Wizkid</h4>
+              <p>Starboy. The pioneer who took Afrobeats to the world.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="/assets/images/tems.jpeg" alt="Tems" />
+            <div class="card-content">
+              <span class="genre">R&amp;B / Afrobeats</span>
+              <h4>Tems</h4>
+              <p>
+                The soulful voice redefining Nigerian sound internationally.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="genres">
+      <div class="container">
+        <h3>Popular Genres</h3>
+        <div class="genres-grid">
+          <div class="genre-card">Afrobeats</div>
+          <div class="genre-card">Highlife</div>
+          <div class="genre-card">Fuji</div>
+          <div class="genre-card">Amapiano</div>
+          <div class="genre-card">Juju</div>
+          <div class="genre-card">Hip-Hop</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <h3>Stay in the Loop</h3>
+        <p>
+          Get updates on new releases, emerging artists, and Nigerian music
+          news.
+        </p>
+        <form>
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 NaijaTunes • Celebrating Nigerian Music</p>
+      <div class="footer-links">
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </footer>
   </body>
 </html>
