@@ -1,0 +1,15 @@
+{
+  "name": "basic_info",
+  "version": "1.0.0",
+  "description": "A simple Node Js project used as an introduction to how it works",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Clematins Nwiibee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
