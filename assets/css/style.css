@@ -219,6 +219,88 @@ footer {
   text-decoration: none;
 }
 
+/* ====================== PAGE HERO ====================== */
+.page-hero {
+  background:
+    linear-gradient(rgba(10, 61, 31, 0.75), rgba(10, 61, 31, 0.75)),
+    url("https://picsum.photos/id/1015/2000/1200") center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #0a3d1f;
+  font-size: 2.2rem;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.about-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-info {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.error-page {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.error-code {
+  font-size: 8rem;
+  color: #0a3d1f;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.error-message {
+  font-size: 1.3rem;
+  max-width: 500px;
+  margin: 0 auto 2.5rem;
+}
+
 @media (max-width: 768px) {
   .hero h2 {
     font-size: 2.8rem;
