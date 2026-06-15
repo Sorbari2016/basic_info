@@ -24,6 +24,7 @@ const server = http.createServer((req, res) => {
       const ext = path.extname(filePath); // grab file extension
 
       const mimeTypes = {
+        ".css": "text/css",
         ".png": "image/png",
         ".jpg": "image/jpeg",
         ".jpeg": "image/jpeg",
