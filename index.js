@@ -50,8 +50,8 @@ const server = http.createServer((req, res) => {
     filePath = path.join(__dirname, "index.html");
   } else if (req.url === "/about") {
     filePath = path.join("pages", "about.html");
-  } else if (req.url === "/contact-me") {
-    filePath = path.join("pages", "contact-me.html");
+  } else if (req.url === "/contact-us") {
+    filePath = path.join("pages", "contact-us.html");
   } else {
     filePath = path.join("pages", "404.html");
     res.statusCode = 404;
